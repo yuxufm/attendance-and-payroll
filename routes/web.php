@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// ------- Admin Routes -------
+
+
+// public routes
+Route::get('admin/login', [AdminController::class, 'login']);
+
+// POST
+Route::post('admin/login', [AdminController::class, 'login']);
+
+// private routes
+Route::prefix('admin')->middleware('adminAuth')->group(function () {
+
 });
