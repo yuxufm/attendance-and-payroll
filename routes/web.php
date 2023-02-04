@@ -26,7 +26,8 @@ Route::post('pegawai/login', [PegawaiController::class, 'login']);
 
 // private routes
 Route::prefix('pegawai')->middleware('pegawaiAuth')->group(function () {
-
+    Route::get('/', [PegawaiController::class, 'index']);
+    Route::get('logout', [PegawaiController::class, 'logout']);
 });
 
 // ------- End of Pegawai Routes -------
@@ -44,7 +45,8 @@ Route::post('admin/login', [AdminController::class, 'login']);
 
 // private routes
 Route::prefix('admin')->middleware('adminAuth')->group(function () {
-
+    Route::get('/', [AdminController::class, 'index']);
+    Route::get('logout', [AdminController::class, 'logout']);
 });
 
 

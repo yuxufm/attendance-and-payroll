@@ -494,14 +494,59 @@ video {
 .mb-6 {
   margin-bottom: 1.5rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-14 {
+  margin-top: 3.5rem;
+}
+.flex {
+  display: flex;
+}
+.table {
+  display: table;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
 .w-\[300px\] {
   width: 300px;
+}
+.w-40 {
+  width: 10rem;
+}
+.w-\[50px\] {
+  width: 50px;
+}
+.flex-none {
+  flex: none;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+.flex-grow {
+  flex-grow: 1;
 }
 .list-disc {
   list-style-type: disc;
 }
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.justify-between {
+  justify-content: space-between;
+}
 .rounded-lg {
   border-radius: 0.5rem;
+}
+.border-r-2 {
+  border-right-width: 2px;
 }
 .bg-red-100 {
   --tw-bg-opacity: 1;
@@ -511,8 +556,19 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#F6F8FD\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 248 253 / var(--tw-bg-opacity));
+}
 .p-4 {
   padding: 1rem;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .px-3 {
   padding-left: 0.75rem;
@@ -532,6 +588,10 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 .font-semibold {
   font-weight: 600;
 }
@@ -548,6 +608,15 @@ video {
 .text-green-700 {
   --tw-text-opacity: 1;
   color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 @font-face {
@@ -744,5 +813,12 @@ html {
 .anp-link {
   --tw-text-opacity: 1;
   color: rgb(20 64 208 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+
+  .sm\:w-52 {
+    width: 13rem;
+  }
 }
 

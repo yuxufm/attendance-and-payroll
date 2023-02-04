@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class ProfilPegawai extends Model
 {
     use HasFactory;
 
-    protected $table = 'user';
+    protected $table = 'profil_pegawai';
 
     protected $fillable = [
-        'username'
-    ];
-
-    protected $hidden = [
-        'id',
-        'password'
+        'id_user',
+        'nama',
+        'jabatan'
     ];
 }

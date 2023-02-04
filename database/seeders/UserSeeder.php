@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
 
         DB::table($table)->updateOrInsert([
             'id' => 1,
-            'username' => 'Admin',
+            'username' => 'admin',
             'password' => Hash::make('admin'),
             'hak_akses' => 'admin'
         ]);
