@@ -46,11 +46,13 @@ class AdminController extends Controller
                 // success login
                 if ($userData && Hash::check($password, $userData->password)) {
 
+                    $idUser = $userData->id;
                     $profilPegawaiData = ProfilPegawai::query()
-                        ->where('id_user', '=', $userData->id)
+                        ->where('id_user', '=', $idUser)
                         ->first();
 
                     $adminHelpers->setSession([
+                        'id_user' => $idUser,
                         'username' => $username,
                         'nama' => $profilPegawaiData->nama
                     ]);

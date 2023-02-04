@@ -28,6 +28,10 @@ Route::post('pegawai/login', [PegawaiController::class, 'login']);
 Route::prefix('pegawai')->middleware('pegawaiAuth')->group(function () {
     Route::get('/', [PegawaiController::class, 'index']);
     Route::get('logout', [PegawaiController::class, 'logout']);
+
+    Route::get('absensi', [PegawaiController::class, 'lihatAbsensi']);
+    Route::get('absensi/masuk-kerja', [PegawaiController::class, 'masukKerja']);
+    Route::get('absensi/selesai-kerja', [PegawaiController::class, 'selesaiKerja']);
 });
 
 // ------- End of Pegawai Routes -------
