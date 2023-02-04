@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,24 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// ------- Pegawai Routes -------
+
+
+// public routes
+Route::get('pegawai/login', [PegawaiController::class, 'login']);
+
+// POST
+Route::post('pegawai/login', [PegawaiController::class, 'login']);
+
+// private routes
+Route::prefix('pegawai')->middleware('pegawaiAuth')->group(function () {
+
+});
+
+// ------- End of Pegawai Routes -------
+
+
 
 // ------- Admin Routes -------
 
@@ -27,3 +46,6 @@ Route::post('admin/login', [AdminController::class, 'login']);
 Route::prefix('admin')->middleware('adminAuth')->group(function () {
 
 });
+
+
+// ------- End of Admin Routes -------

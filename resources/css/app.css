@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "OpenSans";
+    font-weight: 400;
+    src: url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "OpenSans";
+    font-weight: 500;
+    src: url("../fonts/OpenSans/OpenSans-SemiBold.ttf") format("truetype");
+}
+
+html {
+    font-family: "OpenSans";
+    font-weight: 400;
+    color: #0f172a;
+    /* make font smoother */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* custom styles */
+.anp-input {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-anp-blue-bright focus:border-anp-blue-bright block w-full p-2.5 outline-none;
+}
+
+.anp-input-no-rounded {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-anp-blue-bright focus:border-anp-blue-bright block w-full p-2.5 outline-none;
+}
+
+.anp-input:read-only {
+    @apply bg-gray-200;
+}
+
+.anp-select {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-anp-blue-bright focus:border-anp-blue-bright w-full block p-2.5 outline-none;
+}
+
+.anp-label {
+    @apply inline-block mt-2 text-sm;
+}
+
+.anp-submit {
+    @apply text-white bg-anp-blue hover:bg-anp-blue-dark focus:ring-4 focus:outline-none focus:ring-anp-blue-bright font-semibold rounded-lg text-sm w-full px-5 py-2.5 text-center;
+}
+
+.anp-submit-disabled {
+    @apply text-white bg-gray-400 focus:ring-4 focus:outline-none font-semibold rounded-lg text-sm w-full px-5 py-2.5 text-center;
+}
+
+.anp-sidebar-menu {
+    @apply hover:bg-anp-blue hover:text-white ease-in-out duration-200 px-5 py-3;
+}
+
+.anp-title {
+    @apply text-xl font-semibold mb-10;
+}
+
+.anp-link {
+    @apply text-anp-blue-dark;
+}
