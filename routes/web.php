@@ -32,6 +32,8 @@ Route::prefix('pegawai')->middleware('pegawaiAuth')->group(function () {
     Route::get('absensi', [PegawaiController::class, 'lihatAbsensi']);
     Route::get('absensi/masuk-kerja', [PegawaiController::class, 'masukKerja']);
     Route::get('absensi/selesai-kerja', [PegawaiController::class, 'selesaiKerja']);
+
+    Route::get('payslip', [PegawaiController::class, 'lihatPayslip']);
 });
 
 // ------- End of Pegawai Routes -------
@@ -51,6 +53,12 @@ Route::post('admin/login', [AdminController::class, 'login']);
 Route::prefix('admin')->middleware('adminAuth')->group(function () {
     Route::get('/', [AdminController::class, 'index']);
     Route::get('logout', [AdminController::class, 'logout']);
+
+    Route::get('absensi', [AdminController::class, 'lihatAbsensi']);
+    Route::get('payslip', [AdminController::class, 'lihatPayslip']);
+    Route::get('payslip/buat', [AdminController::class, 'buatPayslip']);
+
+    Route::post('payslip/buat', [AdminController::class, 'buatPayslip']);
 });
 
 

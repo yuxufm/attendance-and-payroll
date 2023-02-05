@@ -477,6 +477,9 @@ video {
 .left-1\/2 {
   left: 50%;
 }
+.float-right {
+  float: right;
+}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -519,6 +522,15 @@ video {
 .mb-10 {
   margin-bottom: 2.5rem;
 }
+.mt-16 {
+  margin-top: 4rem;
+}
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+.block {
+  display: block;
+}
 .flex {
   display: flex;
 }
@@ -536,6 +548,12 @@ video {
 }
 .w-\[50px\] {
   width: 50px;
+}
+.w-\[500px\] {
+  width: 500px;
+}
+.w-\[100px\] {
+  width: 100px;
 }
 .flex-none {
   flex: none;
@@ -633,6 +651,10 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .font-semibold {
   font-weight: 600;

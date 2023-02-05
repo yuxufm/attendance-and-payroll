@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\PegawaiHelpers;
 use App\Models\AbsensiPegawai;
 use App\Models\ProfilPegawai;
+use App\Models\SlipGajiBulanan;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -121,5 +122,15 @@ class PegawaiController extends Controller
         );
 
         return redirect()->back()->with('message', 'Jam selesai kerja berhasil disimpan.');
+    }
+
+    public function lihatPayslip()
+    {
+        $idUser = session()->get('id_user');
+        $data = SlipGajiBulanan::query()->where('id_user', '=', $idUser)->get()->sortByDesc('id');
+
+        return view('pegawai.payslip.index', [
+            'data' => $data
+        ]);
     }
 }

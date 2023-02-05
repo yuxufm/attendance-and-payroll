@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(ProfilPegawaiSeeder::class);
         $this->call(PendapatanPegawaiSeeder::class);
+        $this->call(AbsensiPegawaiSeeder::class);
     }
 }
