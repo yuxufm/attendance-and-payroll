@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class PendapatanPegawai extends Model
 {
     use HasFactory;
 
-    protected $table = 'user';
+    protected $table = 'pendapatan_pegawai';
 
     protected $fillable = [
-        'username'
-    ];
-
-    protected $hidden = [
-        'id',
-        'password'
+        'id_user',
+        'gaji_pokok_bulanan'
     ];
 }
