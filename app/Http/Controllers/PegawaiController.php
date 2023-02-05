@@ -127,7 +127,13 @@ class PegawaiController extends Controller
     public function lihatPayslip()
     {
         $idUser = session()->get('id_user');
-        $data = SlipGajiBulanan::query()->where('id_user', '=', $idUser)->get()->sortByDesc('id');
+        $data = SlipGajiBulanan::query()->where('slip_gaji_bulanan.id_user', '=', $idUser)->get()->sortByDesc('id');
+
+        foreach ($data as $item) {
+            $item['total_penghasilan_bruto'] = $item->gaji_pokok_bulanan + $item->benefit_bpjs_dari_perusahaan + $item->benefit_ketenagakerjaan_dari_perusahaan;
+            $item['total_potongan'] = $item->potongan_bpjs_pekerja + $item->potongan_ketenagakerjaan_pekerja + $item->potongan_absen_jam_kerja;
+            $item['total_penerimaan'] = $item->gaji_pokok_bulanan - $item['total_potongan'];
+        }
 
         return view('pegawai.payslip.index', [
             'data' => $data

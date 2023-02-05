@@ -10,6 +10,7 @@
         </div>
     </div>
 
+
     <table id="tabel_{{ $_link }}" class="text-sm">
         <thead>
             <tr>
@@ -28,19 +29,25 @@
             </tr>
         </thead>
         <tbody>
+            @php($namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'])
             @foreach ($data as $item)
                 <tr>
                     <td class="w-[50px]">{{ $loop->iteration }}.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $namaBulan[$item->bulan_gaji - 1] }}</td>
+                    <td>{{ $item->tahun_gaji }}</td>
+                    <td>{{ number_format($item->gaji_pokok_bulanan) }}</td>
+                    <td>{{ number_format($item->benefit_bpjs_dari_perusahaan) }}</td>
+                    <td>{{ number_format($item->benefit_ketenagakerjaan_dari_perusahaan) }}</td>
+                    <td>{{ number_format($item->total_penghasilan_bruto) }}</td>
+                    <td>{{ number_format($item->potongan_bpjs_pekerja) }}</td>
+                    <td>{{ number_format($item->potongan_ketenagakerjaan_pekerja) }}</td>
+                    <td>{{ number_format($item->potongan_absen_jam_kerja) }}
+                        <div class="text-xs">
+                            (Absen: {{ $item->total_absen_jam_kerja }}jam; Kerja: {{ $item->total_jam_kerja }}jam)
+                        </div>
+                    </td>
+                    <td>{{ number_format($item->total_potongan) }}</td>
+                    <td class="font-semibold text-base">Rp. {{ number_format($item->total_penerimaan) }}</td>
                 </tr>
             @endforeach
         </tbody>
